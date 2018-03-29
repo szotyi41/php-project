@@ -3,7 +3,7 @@ label {
     font-size: 1em;
 }
 
-input[type="textbox"], input[type="password"] {
+input[type="textbox"], input[type="password"], input[type="email"] {
     display: block;
     outline: none;
     padding: 8px;
@@ -15,9 +15,10 @@ input[type="textbox"], input[type="password"] {
     border-radius: 3px;
 }
 
-input[type="textbox"]:focus, input[type="password"]:focus {
+input[type="textbox"]:focus, input[type="password"]:focus, input[type="email"]:focus {
     border: 1px solid lightgray;
 }
+
 
 input[type="button"], input[type="submit"] {
     display: block;

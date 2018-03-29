@@ -5,7 +5,7 @@
 </div>
 
 <div class="container">
-	<h2>Connect to database</h2>
+	<h2><i class="fa fa-database"></i> Connect to database - 2/3</h2>
 	<p>You need to have a database server and an existing user to use my project. This section create a config.ini file to your server and save the access from your database connection.</p>
 
 	<form method="post" accept-charset="utf-8">
