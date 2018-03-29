@@ -19,6 +19,6 @@ require DIR_LOCAL . "vendor" . DIR . "autoload.php";
 
 $database = new \classes\database();
 $connection = $database->getConnection();
-$database->install();
+//$database->install();
 
 //require DIR_TEMPLATE . "install.php";

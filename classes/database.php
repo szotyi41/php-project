@@ -14,6 +14,7 @@ class database
 {
     static public $connection;
 
+    /* Get the database connection from config file and create if not exists */
     public static function getConnection() {
 
         if(!isset(self::$connection))
@@ -36,6 +37,7 @@ class database
         return $connection;
     }
 
+    /* Create all of tables what are needed. */
     public function install() {
         $sql = 'CREATE TABLE IF NOT EXISTS `buza_peter_Users` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(30) NOT NULL , `password` VARCHAR(30) NOT NULL , `mail` VARCHAR(50) NOT NULL , `registered` TIMESTAMP NOT NULL , `lastloggedin` DATE NULL , `admin` BOOLEAN NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;';
         $db = $this->getConnection();
