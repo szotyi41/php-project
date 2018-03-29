@@ -1,8 +1,12 @@
 <?php require "header.php"; ?>
 
+<div class="head">
+    <h1>Installation</h1>
+</div>
+
 <div class="container">
-	<h1>Connect to database</h1>
-	<p>You need to have a database server to use my project. This section create a config.ini file to your server and save the access from your database connection.</p>
+	<h2>Connect to database</h2>
+	<p>You need to have a database server and an existing user to use my project. This section create a config.ini file to your server and save the access from your database connection.</p>
 
 	<form method="post" accept-charset="utf-8">
         <label>Database hostname: *</label>

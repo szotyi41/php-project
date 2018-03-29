@@ -21,4 +21,4 @@ $database = new \classes\database();
 $connection = $database->getConnection();
 //$database->install();
 
-//require DIR_TEMPLATE . "install.php";
+require DIR_TEMPLATE . "install-database.php";

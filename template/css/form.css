@@ -1,0 +1,44 @@
+label {
+    display: block;
+    font-size: 1em;
+}
+
+input[type="textbox"], input[type="password"] {
+    display: block;
+    outline: none;
+    padding: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 300px;
+
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+input[type="textbox"]:focus, input[type="password"]:focus {
+    border: 1px solid lightgray;
+}
+
+input[type="button"], input[type="submit"] {
+    display: block;
+    outline: none;
+    padding: 8px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 40px;
+
+    color: white;
+    background: #269900;
+    border: transparent;
+    border-radius: 3px;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover {
+    cursor: pointer;
+    background: #008542;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
