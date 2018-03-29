@@ -1,0 +1,22 @@
+{
+    "name": "buza_peter/buza_peter",
+    "description": "PHP fejlesztoi feladat",
+    "type": "project",
+    "require": {
+        "php": "7.*.*",
+        "components/jquery": "^3.3",
+        "components/font-awesome": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "":""
+        }
+    },
+    "license": "opensource",
+    "authors": [
+        {
+            "name": "Buza Péter",
+            "email": "szotyi41@yahoo.com"
+        }
+    ]
+}
