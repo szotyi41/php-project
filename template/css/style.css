@@ -26,7 +26,7 @@ html, body {
 	}
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
 	color: #CD5C5C;
 }
 
@@ -38,4 +38,52 @@ h1, h2 {
 
 .container p {
 	color: gray;
+}
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: black;
+	text-align: center;
+
+	-webkit-box-shadow: 0px 6px 45px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 6px 45px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 6px 45px 0px rgba(0,0,0,0.1);
+}
+
+footer p {
+	color: gray;
+	font-size: 20px;
+	margin: 20px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+table td, table th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+table tr:not(:first-child):hover {
+	cursor: pointer;
+	background-color: #ddd;
+}
+
+table tr:first-child {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #CD5C5C;
+	color: white;
 }

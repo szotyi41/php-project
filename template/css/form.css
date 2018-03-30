@@ -47,13 +47,13 @@ input:-webkit-autofill {
     background: #008542;
 }
 
-#button-back {
+#button-back, #button-logout {
     color: white;
     background: #FF0000;
     border: transparent;
     border-radius: 3px;
 }
 
-#button-back:hover {
+#button-back:hover, #button-logout:hover {
     background: #CD5C5C;
 }
