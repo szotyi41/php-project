@@ -22,11 +22,12 @@ define("DIR_VENDOR", DIR_LOCAL . "vendor" . DIR);
 
 require DIR_VENDOR . "autoload.php";
 
+/* Check if config.ini is exists */
 if(!is_file("config.ini"))
 {
     $_GET['step'] = 3;
 
-    require DIR_TEMPLATE . "login.php";
+    require DIR_TEMPLATE . "install.php";
 }
 else
 {
@@ -38,6 +39,7 @@ else
     } else {
         require DIR_TEMPLATE . "login.php";
     }
+
 }
 
 
