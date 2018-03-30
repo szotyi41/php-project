@@ -13,12 +13,21 @@ define("DIR_LOCAL", __DIR__ . DIR);
 define("DIR_TEMPLATE", DIR_LOCAL . "template" . DIR);
 define("DIR_CLASSES", DIR_LOCAL . "classes" . DIR);
 define("DIR_JS", DIR_LOCAL . "js" . DIR);
-define("CONFIG", parse_ini_file(DIR_LOCAL . "config.ini"));
 
 require DIR_LOCAL . "vendor" . DIR . "autoload.php";
 
-$database = new \classes\database();
-$connection = $database->getConnection();
-//$database->install();
+if(!is_file("config.ini"))
+{
+    $_GET['step'] = 1;
 
-require DIR_TEMPLATE . "install-firstusers.php";
+    require DIR_TEMPLATE . "install.php";
+}
+else
+{
+    define("CONFIG", parse_ini_file(DIR_LOCAL . "config.ini"));
+
+    require DIR_TEMPLATE . "login.php";
+}
+
+
+

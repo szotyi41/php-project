@@ -21,25 +21,39 @@ input[type="textbox"]:focus, input[type="password"]:focus, input[type="email"]:f
 
 
 input[type="button"], input[type="submit"] {
-    display: block;
     outline: none;
     padding: 8px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    width: 200px;
-    height: 40px;
+    margin: 8px 8px 8px 0px;
+    width: 100px;
+    height: 30px;
+}
 
+input[type="button"]:hover, input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+#button-next {
     color: white;
     background: #269900;
     border: transparent;
     border-radius: 3px;
 }
 
-input[type="button"]:hover, input[type="submit"]:hover {
-    cursor: pointer;
+#button-next:hover {
     background: #008542;
 }
 
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px white inset;
+#button-back {
+    color: white;
+    background: #FF0000;
+    border: transparent;
+    border-radius: 3px;
+}
+
+#button-back:hover {
+    background: #CD5C5C;
 }
