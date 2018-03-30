@@ -6,6 +6,11 @@
  * Time: 21:20
  */
 
+
+if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
 /* Define constants */
 ini_set('display_errors', 1);
 define("DIR", DIRECTORY_SEPARATOR);
@@ -13,20 +18,26 @@ define("DIR_LOCAL", __DIR__ . DIR);
 define("DIR_TEMPLATE", DIR_LOCAL . "template" . DIR);
 define("DIR_CLASSES", DIR_LOCAL . "classes" . DIR);
 define("DIR_JS", DIR_LOCAL . "js" . DIR);
+define("DIR_VENDOR", DIR_LOCAL . "vendor" . DIR);
 
-require DIR_LOCAL . "vendor" . DIR . "autoload.php";
+require DIR_VENDOR . "autoload.php";
 
 if(!is_file("config.ini"))
 {
-    $_GET['step'] = 1;
+    $_GET['step'] = 3;
 
-    require DIR_TEMPLATE . "install.php";
+    require DIR_TEMPLATE . "login.php";
 }
 else
 {
+
     define("CONFIG", parse_ini_file(DIR_LOCAL . "config.ini"));
 
-    require DIR_TEMPLATE . "login.php";
+    if (isset($_SESSION['login'])) {
+        require DIR_TEMPLATE . "user.php";
+    } else {
+        require DIR_TEMPLATE . "login.php";
+    }
 }
 
 

@@ -1,19 +1,5 @@
 <?php require "header.php"; ?>
 
-<?php
-
-    if(isset($_POST['back'])) {
-        $_GET['step'] -= 1;
-        unset($_POST['back']);
-    }
-
-    if(isset($_POST['next'])) {
-        $_GET['step'] += 1;
-        unset($_POST['next']);
-    }
-
-?>
-
 <div class="head">
     <h1>Installation</h1>
 </div>
@@ -47,13 +33,13 @@
             <input type="textbox" name="dbname" placeholder="Database name">
 
             <label>Database username: *</label>
-            <input type="textbox" name="dbuser" placeholder="Database username">
+            <input type="textbox" name="dbuser" placeholder="Database username" autocomplete="off">
 
             <label>Database password: *</label>
             <input type="password" name="dbpass" placeholder="Database password">
 
-            <input type="button" name="next" value="Next" id="button-next">
             <input type="button" name="back" value="Back" id="button-back">
+            <input type="button" name="next" value="Next" id="button-next">
         </form>
     </div>
 
@@ -68,7 +54,7 @@
 
         <form method="post" accept-charset="utf-8">
             <label>Admin username: *</label>
-            <input type="textbox" name="user" placeholder="Username">
+            <input type="textbox" name="user" placeholder="Username" autocomplete="off">
 
             <label>Admin password: *</label>
             <input type="password" name="pass" placeholder="Password">
@@ -76,8 +62,8 @@
             <label>Admin email: *</label>
             <input type="email" name="email" placeholder="Email">
 
-            <input type="button" name="next" value="Next" id="button-next">
             <input type="button" name="back" value="Back" id="button-back">
+            <input type="button" name="next" value="Next" id="button-next">
         </form>
     </div>
 
