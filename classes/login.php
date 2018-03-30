@@ -10,6 +10,10 @@ namespace classes;
 
 use PDO;
 
+/**
+ * Class login
+ * @package classes
+ */
 class login
 {
 
@@ -18,13 +22,19 @@ class login
     private $name;
     private $password;
 
+    /**
+     * login constructor.
+     */
     function __construct()
     {
         $this->name = $_POST['name'];
         $this->password = sha1($_POST['password']);
     }
 
-    /* Check your username and password validation */
+    /**
+     * Check your username and password validation
+     * @return bool|null
+     */
     public function check() {
         $sql = "SELECT id, name, password, mail, registered, lastloggedin, admin FROM buza_peter_Users WHERE name='$this->name' AND password='$this->password' LIMIT 1;";
         $db = database::getConnection();
@@ -43,14 +53,19 @@ class login
         return true;
     }
 
-    /* Update your last logged in datetime to now */
+
+    /**
+     * Update your last logged in datetime to now
+     */
     public function lastlogin() {
         $sql = "UPDATE buza_peter_Users SET lastloggedin = now() WHERE id = '$this->id';";
         $db = database::getConnection();
         $db->exec($sql);
     }
 
-    /* Log out and redirect */
+    /**
+     * Log out and redirect
+     */
     public static function logout() {
 
         session_unset();
@@ -58,7 +73,9 @@ class login
         redirect::to('index.php');
     }
 
-    /* Save your logged in status to session */
+    /**
+     * Save your logged in status to session
+     */
     public function setSession() {
 
         session_unset();

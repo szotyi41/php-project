@@ -19,13 +19,12 @@
         <h2 id="time">Current time: </h2>
 
         <p>Your email: <?=$_SESSION['mail']?></p>
-        <p>You are registered: <?=$_SESSION['registered']?></p>
-        <p>Last logged in: <?=$_SESSION['lastloggedin']?></p>
+        <p>You are registered: <?=$_SESSION['registered'] . " (" . classes\timing::elapsed($_SESSION['registered']) . ")"?></p>
+        <p>Last logged in: <?=$_SESSION['lastloggedin'] . " (" . classes\timing::elapsed($_SESSION['lastloggedin']) . ")"?></p>
 
         <?php if($_SESSION['admin']): ?>
 
         <table>
-
             <?php foreach ($users as $user): ?>
             <tr>
                 <td><?=$user["id"]?></td>

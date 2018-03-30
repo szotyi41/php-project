@@ -31,9 +31,6 @@
         <label>Password:</label>
 		<input type="password" name="password" placeholder="Password" required>
 
-        <input type="checkbox" name="keeplogin">
-        <span id="keeplogin">Keep me logged in</span>
-
 		<input type="submit" name="login" value="LogIn" id="button-next">
 	</form>
 </div>
