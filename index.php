@@ -12,7 +12,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 }
 
 /* Define constants */
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
 define("DIR", DIRECTORY_SEPARATOR);
 define("DIR_LOCAL", __DIR__ . DIR);
 define("DIR_TEMPLATE", DIR_LOCAL . "template" . DIR);
@@ -25,7 +25,7 @@ require DIR_VENDOR . "autoload.php";
 /* Check if config.ini is exists */
 if(!is_file("config.ini"))
 {
-    $_GET['step'] = 3;
+    $_GET['step'] = 1;
 
     require DIR_TEMPLATE . "install.php";
 }

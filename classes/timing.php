@@ -10,8 +10,19 @@ namespace classes;
 
 use DateTime;
 
+/**
+ * Class timing
+ * @package classes
+ */
 abstract class timing
 {
+
+    /**
+     * Create elapsed time string from DateTime variable
+     * @param $datetime
+     * @param bool $full
+     * @return string
+     */
     public static function elapsed($datetime, $full = false) {
         $now = new DateTime;
         $ago = new DateTime($datetime);

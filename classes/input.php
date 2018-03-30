@@ -8,8 +8,17 @@
 
 namespace classes;
 
-class input {
+/**
+ * Class input
+ * @package classes
+ */
+abstract class input {
 
+    /**
+     * Check if post or get declarated already
+     * @param string $type
+     * @return bool
+     */
     public static function exists($type = 'POST')
     {
         switch ($type) {
@@ -24,6 +33,12 @@ class input {
                 break;
         }
     }
+
+    /**
+     * Return post or get variables
+     * @param $item
+     * @return string
+     */
     public static function get($item)
     {
         if(isset($_POST[$item]))

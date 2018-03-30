@@ -11,6 +11,7 @@ html, body {
 	padding: 30px;
 	width: 50%;
 	margin: auto;
+	margin-bottom: 100px;
 
 	background: #FFFFFF;
 	-webkit-box-shadow: 0px 6px 45px 0px rgba(0,0,0,0.1);
@@ -23,6 +24,7 @@ html, body {
 		padding: 30px;
 		width: 95%;
 		margin: auto;
+		margin-bottom: 100px;
 	}
 }
 
@@ -55,8 +57,8 @@ footer {
 
 footer p {
 	color: gray;
-	font-size: 20px;
-	margin: 20px;
+	font-size: 12px;
+	margin: 10px;
 }
 
 table {

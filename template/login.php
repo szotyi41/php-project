@@ -6,9 +6,8 @@
     {
         $login = new \classes\login();
         $login->check();
-        $login->setSession();
 
-        if(isset($login)) {
+        if(isset($login) and ($_SESSION['login'])) {
             \classes\redirect::to('index.php');
         }
     }

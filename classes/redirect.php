@@ -2,8 +2,16 @@
 
 namespace classes;
 
-class redirect
+/**
+ * Class redirect
+ * @package classes
+ */
+abstract class redirect
 {
+    /**
+     * This method can redirect you
+     * @param null $location
+     */
     public static function to($location = null)
     {
         if($location)

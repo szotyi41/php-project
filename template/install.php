@@ -11,6 +11,28 @@
         <h2><i class="fa fa-info-circle"></i> First things - <?=$_GET['step']?>/3</h2>
         <p>This PHP app is my project to show my knowledge about programming. </p>
 
+        <h3>Specifikáció</h3>
+        <p>A webalkalmazás feladata, hogy adatbázis csatalkazással felhasználók adatait tárolja és belépést biztosítson a számukra. Amennyiben nincs megadva az adatbázis elérhetőségéhez a config.ini fájl, ezen a telepítőn vezet végig minket az alkalmazás. Amennyiben a telepítés sikeres a bejelentkezés felületre érkezünk ahol beléphetünk a telepítés során létrehozott felhasználónkkal. Sikeres bejelentkezés esetén a helyi dátumot láthatjuk és az admin felületen a felhasználók adatait.</p>
+
+        <h3>Telepítés</h3>
+        <p>Telepítés előtt kérem bizonyosodjon meg róla, hogy az összes függőséget megfelelően letöltötte. Majd haladjon végig a telepítő lépésein.</p>
+        <p>A függőségeket a terminálban, vagy cmd-ben kiadott <code>composer install</code> paranccsal töltheti le.</p>
+
+        <h3>Követelmények</h3>
+        <p>Az alkalmazás a következő függőségeket, vagy alternatíváit követeli meg:</p>
+        <ul>
+            <li>Apache2 webszerver</li>
+            <li>PHP 7.*.*</li>
+            <li>MySQL adatbázis szerver</li>
+            <li>Composer dependenciakezelő</li>
+        </ul>
+
+        <h3>Implementáció</h3>
+        <p>Az alkalmazást PHPStorm fejlesztői környezetben fejlesztettem.</p>
+
+        <h3>UX/UI</h3>
+        <p>Egyszerű letisztult flat design</p>
+
         <form method="post" accept-charset="utf-8">
             <input type="submit" name="next" value="Next" id="button-next">
         </form>
