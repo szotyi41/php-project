@@ -21,7 +21,7 @@
 <div class="container">
 
     <h2>Welcome</h2>
-	<p>You can register here or log in now.</p>
+    <p>You can register here or log in now.</p>
 
 	<form method="post" accept-charset="utf-8">
         <label>Username:</label>

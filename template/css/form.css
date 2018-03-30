@@ -57,3 +57,7 @@ input:-webkit-autofill {
 #button-back:hover, #button-logout:hover {
     background: #CD5C5C;
 }
+
+input:disabled, input[disabled] {
+    background: lightgray !important;
+}

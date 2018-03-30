@@ -13,7 +13,6 @@
 
     <link rel="stylesheet" href="template/css/style.css">
     <link rel="stylesheet" href="template/css/form.css">
-    <script src="js/time.js"></script>
 
     <link rel="stylesheet" href="vendor/components/font-awesome/css/fontawesome-all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

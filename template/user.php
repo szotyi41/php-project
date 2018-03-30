@@ -10,6 +10,8 @@
     }
 ?>
 
+    <script src="js/time.js"></script>
+
     <div class="head">
         <h1>Welcome, <?=$_SESSION['name']?></h1>
     </div>

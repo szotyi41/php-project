@@ -43,25 +43,27 @@
 
 <?php if($_GET['step'] === 2): ?>
 
+    <script src="js/installdb.js"></script>
+
     <div class="container">
         <h2><i class="fa fa-database"></i> Connect to database - <?=$_GET['step']?>/3</h2>
         <p>You need to have a database server and an existing user to use my project. This section create a config.ini file to your server and save the access from your database connection.</p>
 
         <form method="post" accept-charset="utf-8">
             <label>Database hostname: *</label>
-            <input type="textbox" name="dbhost" placeholder="Database server hostname">
+            <input type="textbox" name="dbhost" id="dbhost" placeholder="Database server hostname">
 
             <label>Database name: *</label>
-            <input type="textbox" name="dbname" placeholder="Database name">
+            <input type="textbox" name="dbname" id="dbname" placeholder="Database name">
 
             <label>Database username: *</label>
-            <input type="textbox" name="dbuser" placeholder="Database username" autocomplete="off">
+            <input type="textbox" name="dbuser" id="dbuser"  placeholder="Database username" autocomplete="off">
 
             <label>Database password: *</label>
-            <input type="password" name="dbpass" placeholder="Database password">
+            <input type="password" name="dbpass" id="dbpass" placeholder="Database password" autocomplete="off">
 
             <input type="button" name="back" value="Back" id="button-back">
-            <input type="button" name="next" value="Next" id="button-next">
+            <input type="button" name="next" value="Next" id="button-next" disabled>
         </form>
     </div>
 

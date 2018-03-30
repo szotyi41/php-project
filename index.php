@@ -25,7 +25,7 @@ require DIR_VENDOR . "autoload.php";
 /* Check if config.ini is exists */
 if(!is_file("config.ini"))
 {
-    $_GET['step'] = 1;
+    $_GET['step'] = 2;
 
     require DIR_TEMPLATE . "install.php";
 }
