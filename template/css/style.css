@@ -96,12 +96,16 @@ code {
 }
 
 a {
-	color: lightblue;
+	color: dodgerblue;
 	text-decoration: none;
 }
 
 a:hover {
 	color: gray;
+}
+
+.access-text {
+	color: green;
 }
 
 .error-text {

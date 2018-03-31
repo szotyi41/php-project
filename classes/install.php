@@ -21,10 +21,18 @@ class install
      * @return bool
      */
     public static function getInstalled() {
+
+        if(is_file("config.ini")) {
+            define("CONFIG", parse_ini_file(DIR_LOCAL . "config.ini"));
+
+            if(CONFIG['install'] === "complete") {
+                return true;
+            }
+        }
+
         if(!isset($_GET['step'])) $_GET['step'] = 1;
         if(!isset($_GET['valid'])) $_GET['valid'] = true;
         return false;
-        //return (is_file("config.ini")) or ($_GET['step'] < 4);*/
     }
 
     /**
@@ -36,11 +44,11 @@ class install
         {
             for($i = 0; $i < 4; $i++) {
                 if(input::get("next-" . $i)) {
-                    if($_GET['valid'] === true) $_GET['step'] = $i + 1;
+                    $_GET['step'] = $i + 1;
                 }
 
                 if(input::get("back-" . $i)) {
-                    if($_GET['valid'] === true) $_GET['step'] = $i - 1;
+                    $_GET['step'] = $i - 1;
                 }
             }
         }
@@ -54,21 +62,20 @@ class install
 
         if(input::exists())
         {
-            if ((input::get('next-2')) and (input::get('dbhost')) and (input::get('dbname')) and (input::get('dbuser')) and (input::get('dbpass')))
+            if (input::get('next-2'))
             {
-                $ini = fopen("config.ini", "w");
+                $ini = fopen("config.ini", "w") or die("Permission denied");
                 fwrite($ini, "host=" . $_POST['dbhost'] . PHP_EOL);
                 fwrite($ini, "name=" . $_POST['dbname'] . PHP_EOL);
                 fwrite($ini, "user=" . $_POST['dbuser'] . PHP_EOL);
                 fwrite($ini, "pass=" . $_POST['dbpass'] . PHP_EOL);
-                fwrite($ini, "charset=utf8");
+                fwrite($ini, "charset=utf8" . PHP_EOL);
                 fclose($ini);
 
-                if(!defined("CONFIG")) {
+                if(is_file(DIR_LOCAL . "config.ini")) {
                     define("CONFIG", parse_ini_file(DIR_LOCAL . "config.ini"));
+                    database::install();
                 }
-
-                database::install();
             }
         }
     }
@@ -87,7 +94,11 @@ class install
                 $register->setMail($_POST["mail"]);
                 $register->setPassword($_POST["password-1"], $_POST['password-2']);
                 $register->setAdmin(1);
-                $register->submit();
+
+                if($register->submit()) {
+                    file_put_contents("config.ini", "install=complete", FILE_APPEND | LOCK_EX);
+                }
+
             }
         }
 

@@ -34,12 +34,32 @@ class register
      */
     public function submit() {
 
-        if($this->valid === true) {
-            $sql = "INSERT INTO buza_peter_Users (name, password, mail, admin) VALUES ('$this->name', '$this->password', '$this->mail', $this->admin)";
-            $db = database::getConnection();
-            $db->exec($sql);
+        $sql = "SELECT name, mail FROM buza_peter_Users WHERE name = '$this->name' OR mail = '$this->mail'";
+        $db = database::getConnection();
+        $result = $db->query($sql);
+
+        if($result->rowCount() > 0)
+        {
+            echo "<p class='error-text'>This username or email is already registered.</p>";
+            $_GET['step'] = 3;
+            return false;
+        }
+        else
+        {
+
+            if ($this->valid === true)
+            {
+                $sql = "INSERT INTO buza_peter_Users (name, password, mail, admin) VALUES ('$this->name', '$this->password', '$this->mail', $this->admin)";
+                $db = database::getConnection();
+                $db->exec($sql);
+
+                echo "<p class='access-text'>You are registered now.</p>";
+                return true;
+            }
+
         }
 
+        return false;
     }
 
     /**

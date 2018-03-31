@@ -53,6 +53,6 @@ class database
         $db = self::getConnection();
         $db->query($sql);
 
-        echo "All tables just created in your database.";
+        echo "<p class='access-text'>All tables just created in your database.</p>";
     }
 }
