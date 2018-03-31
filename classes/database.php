@@ -19,7 +19,7 @@ class database
     static public $connection;
 
     /**
-     * Get the database connection from config file and create if not exists
+     * Get the database connection from config file and create if not exists.
      * @return null|PDO
      */
     public static function getConnection() {
@@ -48,10 +48,10 @@ class database
     /**
      * Create all of tables what are needed.
      */
-    public function install() {
-        $sql = 'CREATE TABLE IF NOT EXISTS buza_peter_Users (id INT NOT NULL AUTO_INCREMENT , name VARCHAR(30) NOT NULL , password CHAR(40) NOT NULL , mail VARCHAR(50) NOT NULL , registered TIMESTAMP NOT NULL , lastloggedin DATE NULL , admin BOOLEAN NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;';
-        $db = $this->getConnection();
-        $db->exec($sql);
+    public static function install() {
+        $sql = 'CREATE TABLE IF NOT EXISTS buza_peter_Users (id int(11) NOT NULL AUTO_INCREMENT, name varchar(30) NOT NULL, password char(40) NOT NULL, mail varchar(50) NOT NULL, registered timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, lastloggedin datetime DEFAULT NULL, admin tinyint(1) NOT NULL, PRIMARY KEY (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8; ENGINE = InnoDB;';
+        $db = self::getConnection();
+        $db->query($sql);
 
         echo "All tables just created in your database.";
     }

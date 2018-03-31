@@ -17,11 +17,11 @@ use PDO;
 class admin
 {
     /**
-     * Query all of user details
+     * Query all of register details.
      * @return array
      */
     public static function getAllUsers() {
-        $rows = array(array('id'=>'ID', 'name'=>'Username', 'mail'=>'E-mail', 'registered'=>'Registered at', 'lastloggedin'=>'Last logged in', 'admin'=>'Permission'));
+        $rows = array(array('id'=>'ID', 'name'=>'Username', 'mail'=>'E-mail', 'registered'=>'Registered at', 'lastloggedin'=>'Last logged in', 'admin'=>'Permission', 'remove'=>'Remove'));
         $sql = "SELECT id, name, mail, registered, lastloggedin, admin FROM buza_peter_Users LIMIT 30;";
         $db = database::getConnection();
         $result = $db->query($sql);
@@ -29,7 +29,7 @@ class admin
     }
 
     /**
-     * Set the user of permission by id
+     * Set the register of permissions by id.
      * @param $id
      * @param $permission (true-false)
      */
@@ -40,7 +40,7 @@ class admin
     }
 
     /**
-     * Remove user by id
+     * Remove user by id.
      * @param $id
      */
     public static function removeUser($id) {

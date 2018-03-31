@@ -1,3 +1,8 @@
+/*
+* This JavaScript code can show the current time.
+* */
+
+
 
 window.onload = function() {
     window.setInterval(setTime, 200);

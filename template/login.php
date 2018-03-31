@@ -4,11 +4,14 @@
 
     if(\classes\input::exists())
     {
-        $login = new \classes\login();
-        $login->check();
+        if(\classes\input::get("login"))
+        {
+            $login = new \classes\login();
+            $login->check();
 
-        if(isset($login) and ($_SESSION['login'])) {
-            \classes\redirect::to('index.php');
+            if (isset($login) and ($_SESSION['login'])) {
+                \classes\redirect::to('index.php');
+            }
         }
     }
 
@@ -30,7 +33,7 @@
         <label>Password:</label>
 		<input type="password" name="password" placeholder="Password" required>
 
-		<input type="submit" name="login" value="LogIn" id="button-next">
+		<input type="submit" name="login" value="Log In" id="button-next">
 	</form>
 </div>
 

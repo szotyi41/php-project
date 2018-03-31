@@ -6,7 +6,9 @@
 
     if(\classes\input::exists())
     {
-        \classes\login::logout();
+        if(\classes\input::get("logout")) {
+            \classes\login::logout();
+        }
     }
 ?>
 
@@ -26,25 +28,27 @@
 
         <?php if($_SESSION['admin']): ?>
 
-        <table>
-            <?php foreach ($users as $user): ?>
-            <tr>
-                <td><?=$user["id"]?></td>
-                <td><?=$user["name"]?></td>
-                <td><?=$user["mail"]?></td>
-                <td><?=$user["registered"]?></td>
-                <td><?=$user["lastloggedin"]?></td>
-                <td><?=$user["admin"] ? 'Admin' : 'Normal'; ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
+            <script src="js/admin.js"></script>
+
+            <table>
+                <?php foreach ($users as $user): ?>
+                <tr>
+                    <td><?=$user["id"]?></td>
+                    <td><?=$user["name"]?></td>
+                    <td><?=$user["mail"]?></td>
+                    <td><?=$user["registered"]?></td>
+                    <td><?=$user["lastloggedin"]?></td>
+                    <td><?=$user["admin"] ? 'Admin' : 'Normal'; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
 
         <?php else: ?>
             <p>You are a normal user.</p>
         <?php endif; ?>
 
         <form method="post" accept-charset="utf-8">
-            <input type="submit" name="logout" value="Log Out" placeholder="LogOut" id="button-logout">
+            <input type="submit" name="logout" value="Log Out" placeholder="Log Out" id="button-logout">
         </form>
     </div>
 

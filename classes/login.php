@@ -48,7 +48,7 @@ class login
 
         $this->data = $row;
         $this->id = $row['id'];
-        $this->lastlogin();
+        $this->setLastlogin();
         $this->setSession();
         return true;
     }
@@ -57,7 +57,7 @@ class login
     /**
      * Update your last logged in datetime to now
      */
-    public function lastlogin() {
+    public function setLastlogin() {
         $sql = "UPDATE buza_peter_Users SET lastloggedin = now() WHERE id = '$this->id';";
         $db = database::getConnection();
         $db->exec($sql);

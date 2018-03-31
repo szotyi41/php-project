@@ -12,7 +12,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 }
 
 /* Define constants */
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 define("DIR", DIRECTORY_SEPARATOR);
 define("DIR_LOCAL", __DIR__ . DIR);
 define("DIR_TEMPLATE", DIR_LOCAL . "template" . DIR);
@@ -20,19 +20,17 @@ define("DIR_CLASSES", DIR_LOCAL . "classes" . DIR);
 define("DIR_JS", DIR_LOCAL . "js" . DIR);
 define("DIR_VENDOR", DIR_LOCAL . "vendor" . DIR);
 
+/* Autoloader */
 require DIR_VENDOR . "autoload.php";
 
 /* Check if config.ini is exists */
-if(!is_file("config.ini"))
-{
-    $_GET['step'] = 2;
-
-    require DIR_TEMPLATE . "install.php";
-}
-else
-{
-
+if(is_file("config.ini")) {
     define("CONFIG", parse_ini_file(DIR_LOCAL . "config.ini"));
+}
+
+/* Check installed status */
+if(\classes\install::getInstalled())
+{
 
     if (isset($_SESSION['login'])) {
         require DIR_TEMPLATE . "user.php";
@@ -41,6 +39,9 @@ else
     }
 
 }
-
+else
+{
+    require DIR_TEMPLATE . "install.php";
+}
 
 

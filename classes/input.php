@@ -10,6 +10,7 @@ namespace classes;
 
 /**
  * Class input
+ * You can get check your get and post variables, and check the text validations.
  * @package classes
  */
 abstract class input {
@@ -35,7 +36,7 @@ abstract class input {
     }
 
     /**
-     * Return post or get variables
+     * Return post or get variables.
      * @param $item
      * @return string
      */
@@ -50,4 +51,51 @@ abstract class input {
         }
         return '';
     }
+
+    /**
+     * Check name validation.
+     * @param $string
+     * @return null
+     */
+    public static function validName($name) {
+
+        if ((strlen($name) < 6) or (!preg_match("/^[a-z][a-z0-9_]*[a-z0-9]$/", $name)))
+        {
+            return null;
+        }
+
+        return $name;
+    }
+
+    /**
+     * Check mail validation.
+     * @param $string
+     * @return null
+     */
+    public static function validMail($mail)
+    {
+        if ((strlen($mail) < 6) or (!filter_var($mail, FILTER_VALIDATE_EMAIL)))
+        {
+            return null;
+        }
+
+        return $mail;
+    }
+
+    /**
+     * Check the two password is same, and validation.
+     * @param $pass1
+     * @param $pass2
+     * @return null
+     */
+    public static function validPaswords($pass1, $pass2)
+    {
+        if ($pass1 !== $pass2)
+        {
+            return null;
+        }
+
+        return $pass1;
+    }
+
 }

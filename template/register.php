@@ -1,8 +1,11 @@
 <?php require "header.php"; ?>
 
 <?php
+    if(\classes\input::exists()) {
+        if(\classes\input::get('mail')) {
 
-
+        }
+    }
 ?>
 
 <div class="head">
@@ -13,13 +16,13 @@
 
 	<form method="post" accept-charset="utf-8">
         <label>E-mail: *</label>
-        <input type="email" name="email" placeholder="Email" required>
+        <input type="email" name="mail" placeholder="Email" required>
 
         <label>Username: *</label>
 		<input type="textbox" name="name" placeholder="Username" autocomplete="off" required>
 
         <label>Password: *</label>
-		<input type="password" name="pass" placeholder="Password" required>
+		<input type="password" name="password" placeholder="Password" required>
 
         <label>Password again: *</label>
         <input type="password" name="pass-again" placeholder="Password again" required>
