@@ -37,7 +37,7 @@
         <p>Az alkalmazás PHPStorm fejlesztői környezetben készült.</p>
 
         <form method="post" accept-charset="utf-8">
-            <input type="submit" name="next-1" value="Next" id="button-next">
+            <input type="submit" name="next-1" value="Next" class="button-green">
         </form>
 
     </div>
@@ -66,8 +66,8 @@
             <label>Database password: *</label>
             <input type="password" name="dbpass" id="dbpass" placeholder="Database password" autocomplete="off">
 
-            <input type="submit" name="back-2" value="Back" id="button-back">
-            <input type="submit" name="next-2" value="Next" id="button-next" disabled>
+            <input type="submit" name="back-2" value="Back" class="button-red">
+            <input type="submit" name="next-2" value="Next" class="button-green" disabled>
         </form>
     </div>
 
@@ -93,8 +93,8 @@
             <label>Admin email: *</label>
             <input type="email" name="mail" placeholder="Email">
 
-            <input type="submit" name="back-3" value="Back" id="button-back">
-            <input type="submit" name="next-3" value="Next" id="button-next">
+            <input type="submit" name="back-3" value="Back" class="button-red">
+            <input type="submit" name="next-3" value="Next" class="button-green">
         </form>
     </div>
 
@@ -109,7 +109,7 @@
         <p>Congratulations. You can use the application now.</p>
 
         <form method="post" accept-charset="utf-8">
-            <input type="submit" name="next-4" value="Next" id="button-next">
+            <input type="submit" name="next-4" value="Next" class="button-green">
         </form>
     </div>
 

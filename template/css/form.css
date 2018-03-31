@@ -33,29 +33,40 @@ input[type="button"]:hover, input[type="submit"]:hover {
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px white inset;
+    -webkit-box-shadow: 0 0 0 30px #FFFFFF inset;
 }
 
-#button-next {
-    color: white;
+.button-blue {
+    color: #FFFFFF;
+    background: #1961AD;
+    border: transparent;
+    border-radius: 3px;
+}
+
+.button-blue:hover {
+    background: #16579B;
+}
+
+.button-green {
+    color: #FFFFFF;
     background: #269900;
     border: transparent;
     border-radius: 3px;
 }
 
-#button-next:hover {
-    background: #008542;
+.button-green:hover {
+    background: #228900;
 }
 
-#button-back, #button-logout {
-    color: white;
-    background: #FF0000;
+.button-red {
+    color: #FFFFFF;
+    background: #CD5C5C;
     border: transparent;
     border-radius: 3px;
 }
 
-#button-back:hover, #button-logout:hover {
-    background: #CD5C5C;
+.button-red:hover {
+    background: #B85353;
 }
 
 input:disabled, input[disabled] {

@@ -32,13 +32,14 @@
 
             <table>
                 <?php foreach ($users as $user): ?>
+
                 <tr>
                     <td><?=$user["id"]?></td>
                     <td><?=$user["name"]?></td>
                     <td><?=$user["mail"]?></td>
                     <td><?=$user["registered"]?></td>
                     <td><?=$user["lastloggedin"]?></td>
-                    <td><?=$user["admin"] ? 'Admin' : 'Normal'; ?></td>
+                    <td><?=$user["admin"] ? 'Admin' : 'Normal';?></td>
                 </tr>
                 <?php endforeach; ?>
             </table>
@@ -48,7 +49,7 @@
         <?php endif; ?>
 
         <form method="post" accept-charset="utf-8">
-            <input type="submit" name="logout" value="Log Out" placeholder="Log Out" id="button-logout">
+            <input type="submit" name="logout" value="Log Out" placeholder="Log Out" class="button-red">
         </form>
     </div>
 

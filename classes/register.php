@@ -49,7 +49,7 @@ class register
 
             if ($this->valid === true)
             {
-                $sql = "INSERT INTO buza_peter_Users (name, password, mail, admin) VALUES ('$this->name', '$this->password', '$this->mail', $this->admin)";
+                $sql = "INSERT INTO buza_peter_Users (name, password, mail, admin) VALUES ('$this->name', '$this->password', '$this->mail', '$this->admin')";
                 $db = database::getConnection();
                 $db->exec($sql);
 
@@ -106,7 +106,7 @@ class register
      */
     public function setAdmin($admin)
     {
-        $this->admin = (bool) $admin;
+        $this->admin = $admin;
     }
 
 }

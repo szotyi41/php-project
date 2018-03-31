@@ -49,7 +49,7 @@ class database
      * Create all of tables what are needed.
      */
     public static function install() {
-        $sql = 'CREATE TABLE IF NOT EXISTS buza_peter_Users (id int(11) NOT NULL AUTO_INCREMENT, name varchar(30) NOT NULL, password char(40) NOT NULL, mail varchar(50) NOT NULL, registered timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, lastloggedin datetime DEFAULT NULL, admin tinyint(1) NOT NULL, PRIMARY KEY (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8; ENGINE = InnoDB;';
+        $sql = "CREATE TABLE IF NOT EXISTS buza_peter_Users (id int(11) NOT NULL AUTO_INCREMENT, name varchar(30) NOT NULL, password char(40) NOT NULL, mail varchar(50) NOT NULL, registered timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, lastloggedin datetime DEFAULT NULL, admin tinyint(1) NOT NULL DEFAULT '0', PRIMARY KEY (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8; ENGINE = InnoDB;";
         $db = self::getConnection();
         $db->query($sql);
 

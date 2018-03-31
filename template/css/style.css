@@ -95,12 +95,13 @@ code {
 	padding: 3px;
 }
 
-a {
+a, #privacy-policy {
+	cursor: pointer;
 	color: dodgerblue;
 	text-decoration: none;
 }
 
-a:hover {
+a:hover, #privacy-policy:hover {
 	color: gray;
 }
 

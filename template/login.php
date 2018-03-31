@@ -13,6 +13,12 @@
                 \classes\redirect::to('index.php');
             }
         }
+
+        if((\classes\input::get("signin") or (\classes\input::get('register'))))
+        {
+            require 'register.php';
+            exit;
+        }
     }
 
 ?>
@@ -33,7 +39,8 @@
         <label>Password:</label>
 		<input type="password" name="password" placeholder="Password" required>
 
-		<input type="submit" name="login" value="Log In" id="button-next">
+		<input type="submit" name="login" value="Log In" class="button-green">
+        <input type="submit" name="signin" value="Sign In" class="button-blue">
 	</form>
 </div>
 

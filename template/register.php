@@ -1,22 +1,31 @@
 <?php require "header.php"; ?>
 
 <?php
-    if (\classes\input::exists()) {
+    if (\classes\input::exists())
+    {
 
-        if (\classes\input::get('register') and ($_POST['accept'] === true))
+        if (\classes\input::get('register'))
         {
-
             $register = new \classes\register();
             $register->setName($_POST["name"]);
             $register->setMail($_POST["mail"]);
             $register->setPassword($_POST["password-1"], $_POST['password-2']);
-            $register->setAdmin(0);
+            $register->setAdmin(false);
+
             if($register->submit()) {
-                echo "<p class='access-text'>Thank you for registration.</p>";
+                \classes\redirect::to('index.php');
             }
         }
     }
 ?>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $('span#privacy-policy').click(function() {
+            $('div#privacy-policy-content').toggle();
+        });
+    });
+</script>
 
 <div class="head">
     <h1>Register</h1>
@@ -25,8 +34,6 @@
 <div class="container">
 
 	<form method="post" accept-charset="utf-8">
-        <label>E-mail: *</label>
-        <input type="email" name="mail" placeholder="Email" required>
 
         <label>Username: *</label>
 		<input type="textbox" name="name" placeholder="Username" autocomplete="off" required>
@@ -37,10 +44,17 @@
         <label>Password again: *</label>
         <input type="password" name="password-2" placeholder="Password again" required>
 
-        <input type="checkbox" name="accept" required>
-        <span>You accept the <a target="_blank" href="https://privacypolicies.com/privacy/view/xMjmQA">Privacy policy</a>.</span>
+        <label>E-mail: *</label>
+        <input type="email" name="mail" placeholder="Email" required>
 
-		<input type="submit" name="register" value="Register" id="button-next">
+        <input type="checkbox" name="accept" required>
+        <span id="privacy-policy">Accept the Privacy policy.</span>
+
+        <div id="privacy-policy-content" style="display: none;">
+            <?php require "privacy-policy.php";?>
+        </div>
+
+		<input type="submit" name="register" value="Register" class="button-green">
 	</form>
 
 </div>
