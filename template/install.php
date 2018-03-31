@@ -23,7 +23,6 @@
         <h3>Telepítés</h3>
         <p>Telepítés előtt bizonyosodjon meg róla, hogy joga van írni és olvasni fájlokat a webszerveren, valamint hogy az összes függőséget megfelelően letöltötte. Majd haladjon végig a telepítő lépésein.</p>
         <p>A függőségeket a terminálban, vagy a Command Promptban kiadott <code>composer install</code> paranccsal tölthei le. Amennyiben a composer nincs telepítve <a href="https://getcomposer.org/" target="_blank">ide</a> kattintva kaphat útmutatást. </p>
-        <p>Valamint ha lehet ne a reták Windowst használja ami önfejűen vissza kapcsolgatja a Defendert, hogy elvegye a jogot a php-tól hogy fájlokat írjon.</p>
 
         <h3>Követelmények</h3>
         <p>Az alkalmazás a következő függőségeket, vagy alternatíváit követeli meg:</p>
@@ -35,7 +34,7 @@
         </ul>
 
         <h3>Implementáció</h3>
-        <p>Az alkalmazást PHPStorm fejlesztői környezetben készült.</p>
+        <p>Az alkalmazás PHPStorm fejlesztői környezetben készült.</p>
 
         <form method="post" accept-charset="utf-8">
             <input type="submit" name="next-1" value="Next" id="button-next">
