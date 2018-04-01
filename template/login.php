@@ -1,4 +1,4 @@
-<?php require "header.php"; ?>
+<?php require HEADER; ?>
 
 <?php
 
@@ -44,4 +44,4 @@
 	</form>
 </div>
 
-<?php require "footer.php"; ?>
+<?php require FOOTER; ?>

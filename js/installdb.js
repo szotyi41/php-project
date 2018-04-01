@@ -27,7 +27,7 @@ $(document).ready(function() {
                 success: function (result) {
                     console.log('Connection result: ' + result);
 
-                    if (result == 1) {
+                    if (result == '1') {
                         $('input#button-next').prop('disabled', false);
                     } else {
                         $('input#button-next').prop('disabled', true);

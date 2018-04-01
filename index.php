@@ -19,6 +19,8 @@ define("DIR_TEMPLATE", DIR_LOCAL . "template" . DIR);
 define("DIR_CLASSES", DIR_LOCAL . "classes" . DIR);
 define("DIR_JS", DIR_LOCAL . "js" . DIR);
 define("DIR_VENDOR", DIR_LOCAL . "vendor" . DIR);
+define("HEADER", DIR_TEMPLATE . "header.php");
+define("FOOTER", DIR_TEMPLATE . "footer.php");
 
 /* Autoloader */
 require DIR_VENDOR . "autoload.php";

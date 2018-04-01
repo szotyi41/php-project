@@ -1,4 +1,4 @@
-<?php require "header.php"; ?>
+<?php require HEADER; ?>
 
 <?php
     if (\classes\input::exists())
@@ -59,4 +59,4 @@
 
 </div>
 
-<?php require "footer.php"; ?>
+<?php require FOOTER; ?>

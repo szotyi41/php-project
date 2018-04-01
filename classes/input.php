@@ -90,7 +90,7 @@ abstract class input {
      */
     public static function validPaswords($pass1, $pass2)
     {
-        if ($pass1 !== $pass2)
+        if ((strlen($pass1) < 6 ) or ($pass1 !== $pass2))
         {
             return null;
         }

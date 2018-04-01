@@ -1,4 +1,4 @@
-<?php require "header.php"; ?>
+<?php require HEADER; ?>
 
 <?php
     \classes\install::steps();
@@ -67,7 +67,7 @@
             <input type="password" name="dbpass" id="dbpass" placeholder="Database password" autocomplete="off">
 
             <input type="submit" name="back-2" value="Back" class="button-red">
-            <input type="submit" name="next-2" value="Next" class="button-green" disabled>
+            <input type="submit" name="next-2" value="Next" id="button-next" class="button-green" disabled>
         </form>
     </div>
 
@@ -115,4 +115,4 @@
 
 <?php endif; ?>
 
-<?php require "footer.php"; ?>
+<?php require FOOTER; ?>
