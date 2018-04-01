@@ -36,7 +36,7 @@ class admin
     public static function setPermission($id, $permission) {
         $sql = "UPDATE buza_peter_Users SET admin = '$permission' WHERE id = '$id';";
         $db = database::getConnection();
-        $db->exec($sql);
+        return $db->exec($sql);
     }
 
     /**
@@ -46,6 +46,6 @@ class admin
     public static function removeUser($id) {
         $sql = "DELETE FROM buza_peter_Users WHERE id = '$id';";
         $db = database::getConnection();
-        $db->exec($sql);
+        return $db->exec($sql);
     }
 }

@@ -11,7 +11,6 @@
         }
     }
 ?>
-
     <script src="js/time.js"></script>
 
     <div class="head">
@@ -30,17 +29,18 @@
 
             <script src="js/admin.js"></script>
 
-            <table>
+            <table class="user-list">
                 <?php foreach ($users as $user): ?>
 
-                <tr>
-                    <td><?=$user["id"]?></td>
-                    <td><?=$user["name"]?></td>
-                    <td><?=$user["mail"]?></td>
-                    <td><?=$user["registered"]?></td>
-                    <td><?=$user["lastloggedin"]?></td>
-                    <td><?=$user["admin"] ? 'Admin' : 'Normal';?></td>
+                <tr class="user">
+                    <td class="id"><?=$user["id"]?></td>
+                    <td class="name"><?=$user["name"]?></td>
+                    <td class="mail"><?=$user["mail"]?></td>
+                    <td class="registered"><?=$user["registered"]?></td>
+                    <td class="lastloggedin"><?=$user["lastloggedin"]?></td>
+                    <td class="permission"><?=$user["admin"] ? 'Admin' : 'Normal';?></td>
                 </tr>
+
                 <?php endforeach; ?>
             </table>
 
